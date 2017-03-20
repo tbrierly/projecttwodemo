@@ -1,6 +1,6 @@
 console.log('\'Allo \'Allo!');
 $(document).ready(function() {
-  var renderer = PIXI.autoDetectRenderer(400, 400, {transparent: true});
+  var renderer = PIXI.autoDetectRenderer(400, 400, { transparent: true });
   $("#addPixi").append(renderer.view);
   var stage = new PIXI.Container();
   var clouds = PIXI.Sprite.fromImage('images/clouds.jpg');
@@ -14,7 +14,7 @@ $(document).ready(function() {
   text.anchor.y = 0.5;
   text.position.x = 200;
   text.position.y = -25;
-  stage.addchild(text);
+  stage.addChild(text);
   render();
   var count = 0;
   function render() {
@@ -32,10 +32,9 @@ $(document).ready(function() {
     count += .001;
   requestAnimationFrame(render);
     clouds.rotation += .001;
-    if (text.position.y < 350){
+    if (text.position.y < 350) {
       text.position.y += 1;
     }
     renderer.render(stage);
   }
-
 });
